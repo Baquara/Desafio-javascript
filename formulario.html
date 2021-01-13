@@ -1,0 +1,128 @@
+ 
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Formulário de validação Javascript</title>
+    <link rel='stylesheet' href='form-style.css' type='text/css' />
+    </head>
+    
+    <body onload='document.form1.text1.focus()'>
+    <div class="mail">
+    <form name="form1" action="#"> 
+    <span>Digite o seu nome: <input type='text' name='text1'/></span>
+    <br>
+    <span>Digite o seu CPF [000.000.000-00]: <input id="cpfi" type='text' onblur="cpf(document.form1.text2)" name='text2'/></span>
+    <br>
+    <span>Digite o seu email [meu@email.com]: <input id="emaili" type='text' onblur="femail(document.form1.text3)" name='text3'/></span>
+    <br>
+    <span>Digite o seu número de telefone [(XX) XXXXX-XXXX]: <input id="phonei" type='text' onblur="phonenumber(document.form1.text4)" name='text4'/></span>
+    <br>
+    <p>Habilitação:</p>
+       <input type="radio" id="sim" name="habilitacao" value="sim" onclick="habcat()"> 
+        <label for="sim">Sim</label><br>
+        <input type="radio" id="nao" name="habilitacao" value="nao" onclick="discat()">
+        <label for="nao">Não</label><br>
+    <br>
+    <span>Categoria: <input id="categoria" type='text' name='text5' readonly/></span>
+    <br>
+    <p>Língua estrangeira:</p>
+       <input type="radio" id="ingles" name="lingua" value="ingles">
+        <label for="ingles">Inglês</label><br>
+        <input type="radio" id="espanhol" name="lingua" value="espanhol">
+        <label for="espanhol">Espanhol</label><br>
+        <input type="radio" id="frances" name="lingua" value="frances">
+        <label for="frances">Francês</label><br>
+    <br>
+    <p>Estado:</p>
+    <select id="ch_user2"><option value="select"></option></select> 
+    <br>
+    <span>CEP: <input type='text' id="cep" onblur="preenche(document.form1.text6)" name='text6'/></span>
+    <br>
+    <span>Cidade: <input id="cidade" type='text' name='text7'/></span>
+    <br>
+    <span>Logradouro: <input id="logradouro" type='text' name='text8'/></span>
+    <br>
+    <span>Número: <input id="numero" type='text' name='text9'/></span>
+    <br>
+    <span>Complemento: <input id="complemento" type='text' name='text10'/></span>
+    <br>
+    <span>Cargo:   <select name="cargos" id="cargos">
+        <option value="analista">Analista de Sistemas</option>
+        <option value="engenheiro">Engenheiro de Software</option>
+        <option value="cientista">Cientista de Dados</option>
+        <option value="analista2">Analista de QA</option>
+        <option value="engenheiro2">Engenheiro de Automação</option>
+      </select>
+    </span>
+    <br>
+    <span>Salário [XX.XXX,XX]: <input type='text' id="salario" name='text12' onblur="verificasalario(document.form1.text12)"/></span>
+    <br>
+    </form>
+<h1>TABELA EDITÁVEL (CLIQUE NOS ESPAÇOS VAZIOS PARA ADICIONAR OS DADOS)</h1>
+
+    <table border="3" id="tabela">
+        <tbody>
+        <tr>
+        <td>Dia da semana</td>
+        <td>Hora início</td>
+        <td>Hora fim</td>
+        <td>Tempo de descanso (h)</td>
+        <td>Carga horária (h)</td>
+        </tr>
+        <tr>
+        <td>Segunda-Feira</td>
+        <td contenteditable='true' id="hi2"></td>
+        <td contenteditable='true' id="hs2"></td>
+        <td contenteditable='true' id="hd2">0</td>
+        <td  id="ch2"></td>
+        </tr>
+        <tr>
+        <td>Terça-Feira</td>
+        <td contenteditable='true' id="hi3"></td>
+        <td contenteditable='true' id="hs3"></td>
+        <td contenteditable='true' id="hd3">0</td>
+        <td  id="ch3"></td>
+    </tr>
+    <tr>
+        <td>Quarta-Feira</td>
+        <td contenteditable='true' id="hi4"></td>
+        <td contenteditable='true' id="hs4"></td>
+        <td contenteditable='true' id="hd4">0</td>
+        <td  id="ch4"></td>
+        </tr>
+        <tr>
+            <td>Quinta-Feira</td>
+            <td contenteditable='true' id="hi5"></td>
+            <td contenteditable='true' id="hs5"></td>
+            <td contenteditable='true' id="hd5">0</td>
+            <td  id="ch5"></td>
+            </tr>
+            <tr>
+                <td>Sexta-Feira</td>
+                <td contenteditable='true' id="hi6"></td>
+                <td contenteditable='true' id="hs6"></td>
+                <td contenteditable='true' id="hd6">0</td>
+                <td  id="ch6"></td>
+                </tr>
+
+                <tr>
+                    <td>Semanal</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td id="htotal">0</td>
+                    </tr>
+        </tbody>
+        </table>
+
+
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="check.js"></script>
+
+
+
+
+    </body>
+    </html>
